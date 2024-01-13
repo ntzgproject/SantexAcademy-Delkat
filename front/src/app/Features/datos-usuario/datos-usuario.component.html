@@ -1,0 +1,41 @@
+<app-barra></app-barra>
+<div *ngIf="!confUsuario">
+    <h3>¡Para ver sus datos debe estar registrado como Usuario!</h3>
+    <div id="botonNavegacion" style="padding-top: 0%;">
+        <app-boton-navegacion></app-boton-navegacion>
+    </div>
+</div>
+
+<div *ngIf="confUsuario" id="divprincipal">
+    <div id="botonNavegacion">
+        <app-boton-navegacion></app-boton-navegacion>
+    </div>
+    <div class="formulario">
+        
+        <div class="formulario_container">
+            <div class="titulo_container">
+                <h2>Mis Datos</h2>
+            </div>
+            <div class="arregloFila">
+                <div class="datosUsuario">
+                    <div>
+                        <p>Email: {{ emailUsuario }}</p>
+                        <p>Alias: {{ aliasUsuario }}</p>
+                        <p>Nombres: {{ nombreUsuario }}</p>
+                        <p>Apellidos: {{ apellidosUsuario }}</p>
+                        <p>DNI: {{ dniUsuario }}</p>
+                        <p>Provincia: {{ provinciaUsuario }}</p>
+                        <p>Localidad: {{ localidadUsuario }}</p>
+                        <p>Dirección: {{ direccionUsuario }}</p>
+                        <input id="BotonEditar" (click)="EditarUsuario()" class="subir-boton" type="button" value="Editar"/>
+                    </div>
+                    <div *ngIf="mensajeDatosUsuario">
+                        {{ mensajeDatosUsuario }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

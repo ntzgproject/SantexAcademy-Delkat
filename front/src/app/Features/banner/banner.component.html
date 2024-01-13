@@ -1,0 +1,42 @@
+
+<div class="row align-items-start">
+    <div id="carouselExampleAutoplaying" class="carousel slide col-sm-12 contenedor contenedorCarousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img [src]="url1" class="d-block w-100" (click)="redCategory()" alt="banner-01">
+          </div>
+          <div class="carousel-item">
+            <img [src]="url2" class="d-block w-100" (click)="redireccion('2')" alt="banner-02">
+          </div>
+          <div class="carousel-item">
+            <img [src]="url3" class="d-block w-100" (click)="redireccion('3')" alt="banner-03">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+  </div>
+
+  <div class="container contenedorTarjeta">
+    <div class="row">
+      <div *ngFor="let articulo of listArticulos" class="col-2 mb-4 tarjeta-container">
+        <div class="card" >
+          <div class="card-body">
+            <div id="contImg">
+            <img (click)="verMas(articulo.id)" id="FotoArticulo" [src]="images[listArticulos.indexOf(articulo)]">
+            </div>
+            <h5 class="card-title">{{ articulo.nombre }}</h5>
+            <p class="descripcion">{{ articulo.detalles }}</p>
+            <h6 id="Precio" class="card-subtitle">${{ articulo.precio }}</h6>
+            <button (click)="verMas(articulo.id)" type="button" id="Ver-mas" class="btn btn-primary">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

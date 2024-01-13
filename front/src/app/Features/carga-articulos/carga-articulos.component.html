@@ -1,0 +1,72 @@
+<app-barra></app-barra>
+<div *ngIf="!confVendedor">
+    <h3>¡Para subir un articulo nuevo debe ser vendedor!</h3>
+    <div id="botonNavegacion" style="padding-top: 0%;">
+        <app-boton-navegacion></app-boton-navegacion>
+    </div>
+</div>
+<div class="formulario" *ngIf="confVendedor">
+    <div id="botonNavegacion" style="padding-top: 0.1%;">
+        <app-boton-navegacion></app-boton-navegacion>
+    </div>
+    <h2>Cargar artículo</h2>
+    <form action="#" class="form" method="post" id="form-art"  enctype="multipart/form-data" [formGroup]="formUp">
+        
+        <div class="row">
+            <!-- Columna izquierda -->
+            <div class="media_columna">
+                <div class="campo">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input formControlName="nomReg" type="text" id="nombre" name="nombre" spellcheck="false" autocomplete="off" required>
+                </div>
+                <div class="campo">
+                    <label for="descripcion">Descripción del Producto:</label>
+                    <textarea formControlName="desReg" id="descripcion" name="descripcion" rows="4" spellcheck="false" autocomplete="off" required></textarea>
+                </div>
+                <div class="campo">
+                    <label for="precio">Precio del Producto:</label>
+                    <div class="precio-input">
+                        <span class="peso-sign">$</span>
+                        <input formControlName="preReg" type="number" id="precio" name="precio" step="1.00" required>
+                    </div>
+                </div>
+            </div>
+            <!-- Columna derecha -->
+            <div class="media_columna_der">
+                <div class="campo">
+                    <label for="categorias">Categorias:</label>
+                    <select formControlName="catReg" name="categoria">
+                        <option value="0">Seleccione Categoría</option>
+                        <option *ngFor="let categoria of listcategorias" [value]="categoria.id">{{categoria.name.charAt(0).toUpperCase()}}{{categoria.name.slice(1)}}</option>
+                    </select>
+                    <div class="select_arrow"></div>
+                </div>
+                <div class="campo">
+                    <label>Cargar Imágenes <span>(imágenes a reemplazar)</span></label>
+                    <label id="botonCargar"for="imagenes">{{textoCarga}}</label>
+                    <input type="file" id="imagenes" name="images" formControlName="images" (change)="reemplazarImagen($event)" accept="image/*"multiple />
+                    <div class="imagenes-container">
+                        <div class="imagenes">
+                            <div class="imagen" *ngFor="let image of uploadedImages">
+                                <img *ngIf="image" (click)="quitarImagen(image)"[src]="image" alt="Imagen cargada"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="envio" class="campo">
+                    <label for="envio">Opción de Envío:</label>
+                    <select formControlName="envReg" id="envio" name="envio" required>
+                        <option value="0">Seleccione Envío</option>
+                        <option value="1">Envío Domicilio</option>
+                        <option value="2">Buscar en local</option>
+                    </select>
+                </div>
+            </div>
+            <div class="botones-container">
+                <input (click)="subirProducto()" class="subir-boton" type="button" value="Subir Producto" [disabled]="formUp.invalid"/>
+            </div>
+            <div *ngIf="mensajeRegistro" class="mensaje">{{ mensajeRegistro }}</div>            
+        </div>
+    </form>
+</div>
+<app-footer class="fixed-bottom"></app-footer>

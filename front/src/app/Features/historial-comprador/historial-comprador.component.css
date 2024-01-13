@@ -1,0 +1,166 @@
+/* etiquetas */
+img {
+    height: 60px;
+    width: 65px;
+    min-width: 65px;
+    max-width: 65px;
+    border-radius: 4px;
+}
+h1 {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0px;
+    color: #d68a96;
+}
+.modal-content span {
+    font-weight:500;
+}
+.modal-content p {
+    font-weight: 400;
+    font-size: medium;
+}
+.precio-final {
+    font-size: 25px;
+    font-weight: 600;
+}
+#modal-title {
+    margin-left: 30%;
+}
+.comprobante-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+}
+
+.border-top {
+    margin: 10px 0;
+}
+h3 {
+    background-color: #ffffff; 
+    border: 1px solid #c95c6d; 
+    padding: 10px;
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    font-size: 18px; 
+    color: #333; 
+    margin-top: 10px ; 
+    text-align: center; 
+    font-weight: bold;
+  }
+p, a {
+    width: max-content;
+    font-size: small;
+    margin: 0;
+    font-weight: 600;
+    cursor:default;
+}
+a {font-weight: 400;}
+span {color: #d7818e;}
+
+/* general */
+#titulo {
+    display: flex;
+    justify-content: center;
+}
+#general {
+    display: flex;
+    justify-content: center;  
+    align-items: center;    
+    height: 80%;
+}
+#recuadro {
+    min-height: 90%;
+    width: 75%;    
+    max-height: 60%;
+    background-color: rgba(230, 230, 230, 0.805);
+    border-radius: 15px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+#botonNavegacion {
+    margin-left: 0.5%;
+    padding-top: 0.5%;
+}
+
+/* articulos */
+#articulo {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    padding-bottom: 8px;
+    height: 75px;
+    border-bottom: 1px solid #d68a96;
+}
+#articulo a {
+    color: #bd394d;
+    text-decoration: none;
+}
+#articulo a:hover {
+    cursor: pointer;
+    color:blueviolet;
+    transition: 0.3s;
+}
+
+/* datos vendedor */
+#datosVen {width: 400px;}
+#datosVen {width: 20%;}
+#datosVen p {width: 100%;}
+#nomArt {width: 500px;}
+#nomArt span{
+    width: 100%;;
+    cursor: default;
+}
+#nomArt span:hover {
+    cursor: pointer;
+    color:blueviolet;
+    transition: 0.3s;
+}
+#nombreVen {display: flex;
+}
+#catArt span:hover {
+    color:blueviolet;
+    cursor: pointer;
+}
+
+/* datos articulo */
+#descripcion {
+    width: 30%;
+    min-width: 30%;
+    max-width: 30%;
+    height: 95%;
+    max-height: 95%;
+}
+#desArt {
+    width: max-content;
+    font-size: large;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#datosArt {width: 20%;}
+
+/* acciones */
+#acciones {
+    display:grid;
+    align-content: end;
+    width: 13%;
+}
+#acciones a {margin-top: 2%;}
+
+/* comprobante */
+.btn {
+    background-color: #d68a96;
+    border: none;
+}
+.btn:hover {
+    background-color:#bd394d;
+}
+.modal-body span {
+    color: black;
+}
+#cuadrado {
+    padding-bottom: 2%;
+}

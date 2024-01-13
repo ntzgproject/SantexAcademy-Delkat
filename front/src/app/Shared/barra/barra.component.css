@@ -1,0 +1,75 @@
+/* etiquetas */
+img {
+    width: 40px;
+    margin-left: 20px;
+    background-color: none;
+}
+img:hover {
+    cursor: pointer;
+}
+button {
+    margin-left: 15px;
+}
+input {
+    height: 30px;
+    color: grey;
+    border-radius: 5px;
+    border: none;
+    font-size:medium;
+    text-indent: 5px;
+}
+input:focus { 
+    outline: none; 
+}
+::placeholder {
+    color: grey;
+    font-size: 0.9em;
+}
+/* generales */
+#BarraGeneral {
+    padding: 0;
+}
+#BarraColor {
+    background-color: #e1dede;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/* logos */
+#delkat {
+    font-weight: 500;
+}
+.navbar-nav {
+    margin-left: 10px;
+}
+.navbar-brand {
+    padding: 0;
+}
+/* categorias */
+.dropdown-menu {
+    margin: 0;
+    padding: 0;    
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+    background-color: #E1DEDE;
+    margin-top: 13px;
+}
+
+.dropdown-item:hover {
+    cursor: pointer;
+    background-color: #d68a96;
+    color: white;
+
+}
+/* buscador */
+#buscador {
+    margin-left: 20px;
+}
+#BotonBuscar {
+    color: #f0eaeb;
+    background-color: #d68a96;
+    border: 0;
+}
+#BotonBuscar:hover {
+    background-color: #c95c6d;
+}
